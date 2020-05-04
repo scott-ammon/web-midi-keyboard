@@ -16,6 +16,11 @@ const MidiProvider = (props) => {
         note: midiMessage.data[Constants.NOTE_CHANNEL],
         velocity: midiMessage.data[Constants.VELOCITY_CHANNEL]
       });
+    } else if (midiMessage.data[Constants.EVENT_CHANNEL] === Constants.NOTE_OFF_EVENT) {
+      setMidiData({
+        note: null,
+        velocity: null
+      });
     }
   }
 
