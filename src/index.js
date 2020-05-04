@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import MidiProvider from './context/MidiProvider';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <MidiProvider>
+      <App />
+    </MidiProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
