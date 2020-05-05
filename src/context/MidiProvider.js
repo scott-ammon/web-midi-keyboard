@@ -42,12 +42,7 @@ const MidiProvider = (props) => {
   }
 
   useEffect(() => {
-    async function setUp() {
-      const midiInputObj = await setUpMIDIAccess();
-      midiInputObj.onmidimessage = onMIDIMessage;
-      midiInputObj.onstatechange = onStateChange;
-    }
-    setUp();
+    setUpMIDIAccess(onMIDIMessage, onStateChange);
   }, []);
 
   return(

@@ -1,12 +1,13 @@
 import { MIDI_INPUT } from '../constants';
 
-export async function setUpMIDIAccess() {
+export async function setUpMIDIAccess(onMsg, onStateChg) {
   if (navigator.requestMIDIAccess) {
     try {
       const midiAccessObj = await navigator.requestMIDIAccess();
       const midiInputObj = getMidiInput(midiAccessObj);
 
-      return midiInputObj;
+      midiInputObj.onmidimessage = onMsg;
+      midiInputObj.onstatechange = onStateChg;
     } catch (error) {
       console.error("Could not establish connection to MIDI device.");
     }
