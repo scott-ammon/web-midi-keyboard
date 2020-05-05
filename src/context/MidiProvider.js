@@ -4,13 +4,14 @@ import { setUpMIDIAccess } from '../midi-utils/midi-utils';
 import * as Constants from '../constants';
 
 const MidiProvider = (props) => {
-  const [note, setNote] = useState([]);
-  const [velocity, setVelocity] = useState([]);
+  const [keyData, setKeyData] = useState([{
+    notes: null,
+    velocities: null
+  }]);
   const [errors, setErrors] = useState(null);
 
   const midiData = {
-    note,
-    velocity,
+    keyData,
     errors
   };
 
@@ -18,25 +19,27 @@ const MidiProvider = (props) => {
     const event = midiMessage.data[Constants.EVENT_CHANNEL];
     const newNote = midiMessage.data[Constants.NOTE_CHANNEL];
     const newVelocity = midiMessage.data[Constants.VELOCITY_CHANNEL];
+    const newKeyData = {
+      notes: newNote,
+      velocities: newVelocity
+    };
 
     if (event === Constants.NOTE_ON_EVENT) {
-      setNote(note => [...note, newNote]);
-      setVelocity(velocity => [...velocity, newVelocity]);
+      setKeyData(keyData => [...keyData, newKeyData])
     } else if (event === Constants.NOTE_OFF_EVENT) {
-      setNote(note => note.filter(n => n !== newNote));
-      setVelocity([]);
+      setKeyData(keyData => keyData.filter(keyObj => {
+        return keyObj.notes !== newNote;
+      }));
     }
   }
 
   const onStateChange = (input) => {
     console.log(input)
     if(input.currentTarget.state === Constants.DISCONNECTED) {
-      setNote([]);
-      setVelocity([]);
+      setKeyData([]);
       setErrors(Constants.NO_DEVICE_ERROR);
     } else if (input.currentTarget.state === Constants.CONNECTED) {
-      setNote([]);
-      setVelocity([]);
+      setKeyData([]);
       setErrors(null);
     }
   }
@@ -44,6 +47,10 @@ const MidiProvider = (props) => {
   useEffect(() => {
     setUpMIDIAccess(onMIDIMessage, onStateChange);
   }, []);
+
+  useEffect(() => {
+    console.log(midiData);
+  });
 
   return(
     <MidiDataContext.Provider value={midiData}>

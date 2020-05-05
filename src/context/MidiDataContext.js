@@ -1,8 +1,7 @@
 import React from 'react';
 
 const MidiDataContext = React.createContext({
-  note: null,
-  velocity: null,
+  keyData: [],
   errors: null
 });
 
