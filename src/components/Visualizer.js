@@ -7,10 +7,10 @@ const Visualizer = () => {
   return (
     <div>
       <p>Notes: {keyData.map((keyPress, i) => {
-        return <span key={i}>{keyPress.notes}{" "}</span>
+        return <span key={i}>{keyPress.note}{" "}</span>
       })}</p>
       <p>Velocities: {keyData.map((keyPress, i) => {
-        return <span key={i}>{keyPress.velocities}{" "}</span>
+        return <span key={i}>{keyPress.velocity}{" "}</span>
       })}</p>
       <p>Errors: {errors || "None"}</p>
     </div>

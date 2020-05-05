@@ -5,8 +5,8 @@ import * as Constants from '../constants';
 
 const MidiProvider = (props) => {
   const [keyData, setKeyData] = useState([{
-    notes: null,
-    velocities: null
+    note: null,
+    velocity: null
   }]);
   const [errors, setErrors] = useState(null);
 
@@ -20,15 +20,15 @@ const MidiProvider = (props) => {
     const newNote = midiMessage.data[Constants.NOTE_CHANNEL];
     const newVelocity = midiMessage.data[Constants.VELOCITY_CHANNEL];
     const newKeyData = {
-      notes: newNote,
-      velocities: newVelocity
+      note: newNote,
+      velocity: newVelocity
     };
 
     if (event === Constants.NOTE_ON_EVENT) {
       setKeyData(keyData => [...keyData, newKeyData])
     } else if (event === Constants.NOTE_OFF_EVENT) {
       setKeyData(keyData => keyData.filter(keyObj => {
-        return keyObj.notes !== newNote;
+        return keyObj.note !== newNote;
       }));
     }
   }
