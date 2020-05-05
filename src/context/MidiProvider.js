@@ -4,40 +4,40 @@ import { setUpMIDIAccess } from '../midi-utils/midi-utils';
 import * as Constants from '../constants';
 
 const MidiProvider = (props) => {
-  const [midiData, setMidiData] = useState({
-    note: 0,
-    velocity: 0,
-    errors: null
-  });
+  const [note, setNote] = useState([]);
+  const [velocity, setVelocity] = useState([]);
+  const [errors, setErrors] = useState(null);
+
+  const midiData = {
+    note,
+    velocity,
+    errors
+  };
 
   const onMIDIMessage = (midiMessage) => {
-    if (midiMessage.data[Constants.EVENT_CHANNEL] === Constants.NOTE_ON_EVENT) {
-      setMidiData({
-        note: midiMessage.data[Constants.NOTE_CHANNEL],
-        velocity: midiMessage.data[Constants.VELOCITY_CHANNEL]
-      });
-    } else if (midiMessage.data[Constants.EVENT_CHANNEL] === Constants.NOTE_OFF_EVENT) {
-      setMidiData({
-        note: null,
-        velocity: null
-      });
+    const event = midiMessage.data[Constants.EVENT_CHANNEL];
+    const newNote = midiMessage.data[Constants.NOTE_CHANNEL];
+    const newVelocity = midiMessage.data[Constants.VELOCITY_CHANNEL];
+
+    if (event === Constants.NOTE_ON_EVENT) {
+      setNote(note => [...note, newNote]);
+      setVelocity(velocity => [...velocity, newVelocity]);
+    } else if (event === Constants.NOTE_OFF_EVENT) {
+      setNote([]);
+      setVelocity([]);
     }
   }
 
   const onStateChange = (input) => {
     console.log(input)
     if(input.currentTarget.state === "disconnected") {
-      setMidiData({
-        note: null,
-        velocity: null,
-        errors: "Error: No Device Found."
-      });
+      setNote([]);
+      setVelocity([]);
+      setErrors("Error: No Device Found.");
     } else if (input.currentTarget.state === "connected") {
-      setMidiData({
-        note: null,
-        velocity: null,
-        errors: null
-      });
+      setNote([]);
+      setVelocity([]);
+      setErrors(null);
     }
   }
 
