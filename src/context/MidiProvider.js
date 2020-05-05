@@ -34,7 +34,6 @@ const MidiProvider = (props) => {
   }
 
   const onStateChange = (input) => {
-    console.log(input)
     if(input.currentTarget.state === Constants.DISCONNECTED) {
       setKeyData([]);
       setErrors(Constants.NO_DEVICE_ERROR);
@@ -47,10 +46,6 @@ const MidiProvider = (props) => {
   useEffect(() => {
     setUpMIDIAccess(onMIDIMessage, onStateChange);
   }, []);
-
-  useEffect(() => {
-    console.log(midiData);
-  });
 
   return(
     <MidiDataContext.Provider value={midiData}>
