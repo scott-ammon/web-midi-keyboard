@@ -30,11 +30,11 @@ const MidiProvider = (props) => {
 
   const onStateChange = (input) => {
     console.log(input)
-    if(input.currentTarget.state === "disconnected") {
+    if(input.currentTarget.state === Constants.DISCONNECTED) {
       setNote([]);
       setVelocity([]);
-      setErrors("Error: No Device Found.");
-    } else if (input.currentTarget.state === "connected") {
+      setErrors(Constants.NO_DEVICE_ERROR);
+    } else if (input.currentTarget.state === Constants.CONNECTED) {
       setNote([]);
       setVelocity([]);
       setErrors(null);
