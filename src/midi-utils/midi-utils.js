@@ -1,22 +1,30 @@
 import * as Constants from '../constants';
 
-export async function setUpMIDIAccess(onMsg, onStateChg) {
+export async function setUpMIDIAccess() {
   if (navigator.requestMIDIAccess) {
     try {
-      const midiAccessObj = await navigator.requestMIDIAccess();
-      const midiInputObj = getMidiInput(midiAccessObj);
+      const midiAccess = await navigator.requestMIDIAccess();
 
-      midiInputObj.onmidimessage = onMsg;
-      midiInputObj.onstatechange = onStateChg;
+      const midiInput = getMidiInput(midiAccess);
+
+      return midiInput;
     } catch (error) {
       console.error(Constants.CONNECTION_ERROR);
     }
   } else {
-    console.warn(Constants.UNSUPPORTED_BROWSER_ERROR);
+    alert(Constants.UNSUPPORTED_BROWSER_ERROR);
   }
 }
 
-const getMidiInput = (midiAccessObj) => {
-  let midiInputObj = midiAccessObj.inputs.get(Constants.MIDI_INPUT);
-  return midiInputObj ? midiInputObj : {};
+const getMidiInput = (midiAccess) => {
+  let midiInput = midiAccess.inputs.get(Constants.MIDI_INPUT);
+  
+  if (!midiInput) {
+    midiInput = {}
+    midiInput.errors = Constants.NO_DEVICE_ERROR;
+  } else {
+    midiInput.errors = null;
+  }
+
+  return midiInput;
 }

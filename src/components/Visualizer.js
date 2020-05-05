@@ -12,7 +12,7 @@ const Visualizer = () => {
       <p>Velocities: {keyData.map((keyPress, i) => {
         return <span key={i}>{keyPress.velocity}{" "}</span>
       })}</p>
-      <p>Errors: {errors || "None"}</p>
+      <p>{errors}</p>
     </div>
   );
 };

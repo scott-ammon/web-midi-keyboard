@@ -44,7 +44,16 @@ const MidiProvider = (props) => {
   }
 
   useEffect(() => {
-    setUpMIDIAccess(onMIDIMessage, onStateChange);
+    async function setUp() {
+      const midiInput = await setUpMIDIAccess();
+
+      midiInput.onmidimessage = onMIDIMessage;
+      midiInput.onstatechange = onStateChange;
+
+      setErrors(midiInput.errors);
+    }
+
+    setUp();
   }, []);
 
   return(
