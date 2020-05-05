@@ -12,3 +12,5 @@ export const CONNECTED = "connected";
 
 // MIDI Errors
 export const NO_DEVICE_ERROR = "Error: No device found.";
+export const CONNECTION_ERROR = "Could not establish connection to MIDI device";
+export const UNSUPPORTED_BROWSER_ERROR = "Web MIDI Api is not supported in this browser";

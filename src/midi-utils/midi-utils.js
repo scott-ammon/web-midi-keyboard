@@ -1,4 +1,4 @@
-import { MIDI_INPUT } from '../constants';
+import * as Constants from '../constants';
 
 export async function setUpMIDIAccess(onMsg, onStateChg) {
   if (navigator.requestMIDIAccess) {
@@ -9,16 +9,16 @@ export async function setUpMIDIAccess(onMsg, onStateChg) {
       midiInputObj.onmidimessage = onMsg;
       midiInputObj.onstatechange = onStateChg;
     } catch (error) {
-      console.error("Could not establish connection to MIDI device.");
+      console.error(Constants.CONNECTION_ERROR);
     }
   } else {
-    console.warn("WebMIDI is not supported in this browser.")
+    console.warn(Constants.UNSUPPORTED_BROWSER_ERROR);
   }
 }
 
 const getMidiInput = (midiAccessObj) => {
   let midiInputObj;
-  midiInputObj = midiAccessObj.inputs.get(MIDI_INPUT);
+  midiInputObj = midiAccessObj.inputs.get(Constants.MIDI_INPUT);
   
   if (!midiInputObj) {
     midiInputObj = {};
