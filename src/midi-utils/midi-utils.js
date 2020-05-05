@@ -17,12 +17,6 @@ export async function setUpMIDIAccess(onMsg, onStateChg) {
 }
 
 const getMidiInput = (midiAccessObj) => {
-  let midiInputObj;
-  midiInputObj = midiAccessObj.inputs.get(Constants.MIDI_INPUT);
-  
-  if (!midiInputObj) {
-    midiInputObj = {};
-  }
-  
-  return midiInputObj;
+  let midiInputObj = midiAccessObj.inputs.get(Constants.MIDI_INPUT);
+  return midiInputObj ? midiInputObj : {};
 }
