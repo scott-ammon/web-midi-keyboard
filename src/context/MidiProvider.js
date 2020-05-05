@@ -23,7 +23,7 @@ const MidiProvider = (props) => {
       setNote(note => [...note, newNote]);
       setVelocity(velocity => [...velocity, newVelocity]);
     } else if (event === Constants.NOTE_OFF_EVENT) {
-      setNote([]);
+      setNote(note => note.filter(n => n !== newNote));
       setVelocity([]);
     }
   }
