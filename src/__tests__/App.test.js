@@ -4,6 +4,6 @@ import App from '../App';
 
 test('renders page title', () => {
   const { getByText } = render(<App />);
-  const pElement = getByText(/Web MIDI Api Visualizer/i);
-  expect(pElement).toBeInTheDocument();
+  const pageTitle = getByText(/Web MIDI Api Visualizer/i);
+  expect(pageTitle).toBeInTheDocument();
 });
