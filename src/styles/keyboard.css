@@ -1,0 +1,63 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.keyboard-outer {
+  margin: 0 auto;
+  position: relative;
+  width: 800px;
+  height: 250px;
+  border: 3px solid #DCE3E0;
+  border-radius: 12px;
+  background-color: gray;
+  box-shadow: 60px 80px 70px -80px #384140;
+  background-image: linear-gradient(
+    90deg,
+    #3323E8,
+    #3358FF,
+    #237BE8
+  );
+}
+
+.keyboard-inner {
+  background-color: #FFF8D9;
+  width: 750px;
+  height: 200px;
+  border: 3px solid #DCE3E0;
+  border-radius: 6px;
+  margin: 22px auto;
+  box-shadow: 
+  4px 8px 6px 4px #EAE0C1 inset,
+  -2px -2px 3px 4px #237BE8;
+}
+
+.key-container {
+  display: flex;
+  position: absolute;
+  background: black;
+  width: 600px;
+  height: 170px;
+  border-left: 3px solid #EAE0C1;
+  border-top: 3px solid #EAE0C1;
+  border-right: 3px solid #DCE3E0;
+  right: 22px;
+  bottom: -3px;
+}
+
+.pressedKey {
+  width: 40px;
+  height: 170px;
+  position: absolute;
+  background-color: white;
+  border: 1px solid gray;
+}
+
+.white-key {
+  width: 40px;
+  height: 165px;
+  background-color: white;
+  margin: 0 1px;
+  box-shadow: 4px -8px 6px 4px #eee inset;
+}

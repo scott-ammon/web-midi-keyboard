@@ -1,16 +1,14 @@
 import React from 'react';
-import './App.css';
-import Visualizer from './components/Visualizer';
+import '../styles/app.css';
+import Visualizer from './Visualizer';
 
 const App = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <p>
-          Web MIDI Api Visualizer
-        </p>
-        <Visualizer />
+        <p>Web MIDI Api Visualizer</p>
       </header>
+      <Visualizer />
     </div>
   );
 }
