@@ -1,7 +1,5 @@
 import React, { useContext } from 'react';
 import MidiDataContext from '../context/MidiDataContext';
-import Keyboard from './Keyboard';
-import '../styles/visualizer.css';
 
 const Visualizer = () => {
   const { keyData, errors } = useContext(MidiDataContext);
@@ -15,7 +13,6 @@ const Visualizer = () => {
         return <span key={i}>{keyPress.velocity}{" "}</span>
       })}</p>
       <p>{errors}</p>
-      <Keyboard />
     </div>
   );
 };

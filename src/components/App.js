@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/app.css';
 import Visualizer from './Visualizer';
+import Keyboard from './Keyboard';
 
 const App = () => {
   return (
@@ -9,6 +10,7 @@ const App = () => {
         <p>Web MIDI Api Visualizer</p>
       </header>
       <Visualizer />
+      <Keyboard />
     </div>
   );
 }
