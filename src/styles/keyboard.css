@@ -9,41 +9,44 @@
   position: relative;
   width: 800px;
   height: 250px;
-  border: 3px solid #DCE3E0;
+  border: 3px solid #3358FF;
   border-radius: 12px;
-  background-color: gray;
+  background-color: #3323E8;
   box-shadow: 60px 80px 70px -80px #384140;
   background-image: linear-gradient(
     90deg,
     #3323E8,
-    #3358FF,
-    #237BE8
+    #3323E8,
+    #3358FF
   );
 }
 
 .keyboard-inner {
-  background-color: #FFF8D9;
-  width: 750px;
-  height: 200px;
-  border: 3px solid #DCE3E0;
+  background-color: #1D2124;
+  width: 775px;
+  height: 225px;
   border-radius: 6px;
-  margin: 22px auto;
+  margin: 10px auto;
   box-shadow: 
-  4px 8px 6px 4px #EAE0C1 inset,
+  4px 8px 6px 4px #040505 inset,
   -2px -2px 3px 4px #237BE8;
+  z-index: 100;
 }
 
 .key-container {
   display: flex;
   position: absolute;
   background: black;
+  padding: 0 1px;
   width: 600px;
   height: 170px;
-  border-left: 3px solid #EAE0C1;
-  border-top: 3px solid #EAE0C1;
-  border-right: 3px solid #DCE3E0;
-  right: 22px;
-  bottom: -3px;
+  border-left: 3px solid #040505;
+  border-top: 3px solid #040505;
+  border-right: 3px solid #040505;
+  right: 30px;
+  bottom: 12px;
+  box-shadow: 
+  0px -8px 4px -2px #040505;
 }
 
 .pressedKey {
@@ -59,5 +62,52 @@
   height: 165px;
   background-color: white;
   margin: 0 1px;
-  box-shadow: 4px -8px 6px 4px #eee inset;
+  box-shadow: -2px -6px 4px 2px #d3d3d3 inset;
+}
+
+.black-key {
+  position: absolute;
+  width: 20px;
+  height: 100px;
+  background-color: black;
+}
+
+.cs2 {
+  left: 30px;
+}
+
+.ds2 {
+  left: 70px;
+}
+
+.fs2 {
+  left: 150px;
+}
+
+.gs2 {
+  left: 190px;
+}
+
+.as2 {
+  left: 230px;
+}
+
+.cs3 {
+  left: 310px;
+}
+
+.ds3 {
+  left: 350px;
+}
+
+.fs3 {
+  left: 430px;
+}
+
+.gs3 {
+  left: 470px;
+}
+
+.as3 {
+  left: 510px;
 }
