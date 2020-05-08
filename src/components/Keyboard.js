@@ -36,6 +36,9 @@ const Keyboard = () => {
   return (
     <div className="keyboard-outer">
       <div className="keyboard-inner">
+        <div className="controls line"></div>
+        <div className="controls top"></div>
+        <div className="controls left"></div>
         <div className="key-container">
           {regularKeys}
           {pressedKeys}

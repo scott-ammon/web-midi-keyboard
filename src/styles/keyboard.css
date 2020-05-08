@@ -8,33 +8,62 @@
   margin: 0 auto;
   position: relative;
   width: 800px;
-  height: 250px;
-  border: 3px solid #3358FF;
+  height: 280px;
+  border: 3px solid #A1B0C2;
   border-radius: 12px;
   background-color: #3323E8;
-  box-shadow: 60px 80px 70px -80px #384140;
+  box-shadow: 60px 80px 70px -80px #222;
   background-image: linear-gradient(
     90deg,
-    #3323E8,
-    #3323E8,
-    #3358FF
+    #83909E,
+    #C1D3E8
   );
 }
 
 .keyboard-inner {
   background-color: #1D2124;
   width: 775px;
-  height: 225px;
+  height: 255px;
   border-radius: 6px;
   margin: 10px auto;
   box-shadow: 
   4px 8px 6px 4px #040505 inset,
-  -2px -2px 3px 4px #237BE8;
+  -2px -2px 3px 4px #A1B0C2;
   z-index: 100;
 }
 
+.controls {
+  position: absolute;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  background: #69A9D6;
+}
+
+.top {
+  width: 300px;
+  height: 50px;
+  top: 20px;
+  left: 300px;
+}
+
+.left {
+  width: 110px;
+  height: 160px;
+  top: 70px;
+  left: 30px;
+}
+
+.line {
+  width: 300px;
+  height: 100px;
+  left: 85px;
+  top: 45px;
+  background: none;
+  border-right: none;
+  border-bottom: none;
+}
+
 .key-container {
-  /* display: flex; */
   position: absolute;
   background: black;
   padding: 0 1px;
