@@ -63,6 +63,52 @@
   border-bottom: none;
 }
 
+.dial {
+  position: absolute;
+  width: 10px;
+  height: 110px;
+  background: black;
+  border-radius: 4px;
+  background-image: linear-gradient(
+    90deg,
+    #000 0% 40%,
+    #666 40% 60%,
+    #000 60%
+  );
+}
+
+.pitch {
+  left: 58px;
+  top: 120px;
+}
+
+.modulation {
+  left: 103px;
+  top: 120px;
+}
+
+.handle-mod {
+  position: absolute;
+  right: -13px;
+  bottom: 0;
+  width: 35px;
+  height: 10px;
+  border-radius: 3px;
+  border: 2px solid black;
+  background: #F58A18;
+}
+
+.handle-pitch {
+  position: absolute;
+  right: -13px;
+  bottom: 50px;
+  width: 35px;
+  height: 10px;
+  border-radius: 3px;
+  border: 2px solid black;
+  background: #F58A18;
+}
+
 .button {
   position: absolute;
   top: 30px;
@@ -71,7 +117,7 @@
   border-radius: 20px;
   border: 3px solid black;
   background: #C1D3E8;
-  box-shadow: 0px 5px 4px -2px #040505;
+  box-shadow: 3px 2px 1px 1px #040505;
   background-image: linear-gradient(
     90deg,
     transparent 30%,

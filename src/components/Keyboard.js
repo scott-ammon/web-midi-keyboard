@@ -38,11 +38,17 @@ const Keyboard = () => {
       <div className="keyboard-inner">
         <div className="controls line"></div>
         <div className="controls top"></div>
-        <div className="controls left"></div>
         <div className="button b1"></div>
         <div className="button b2"></div>
         <div className="button b3"></div>
         <div className="button b4"></div>
+        <div className="controls left"></div>
+        <div className="dial modulation">
+          <div className="handle-mod"></div>
+        </div>
+        <div className="dial pitch">
+          <div className="handle-pitch"></div>
+        </div>
         <div className="key-container">
           {regularKeys}
           {pressedKeys}
