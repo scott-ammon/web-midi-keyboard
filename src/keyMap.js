@@ -1,102 +1,127 @@
 export const keyMap = {
   48: {
-    "note": "C2",
-    "color": "white"
+    "note": "c2",
+    "color": "white",
+    "offset": 0
   },
   49: {
-    "note": "CS2",
-    "color": "black"
+    "note": "cs2",
+    "color": "black",
+    "offset": 26
   },
   50: {
-    "note": "D2",
-    "color": "white"
+    "note": "d2",
+    "color": "white",
+    "offset": 40
   },
   51: {
-    "note": "D#2",
-    "color": "black"
+    "note": "ds2",
+    "color": "black",
+    "offset": 73
   },
   52: {
-    "note": "E2",
-    "color": "white"
+    "note": "e2",
+    "color": "white",
+    "offset": 80
   },
   53: {
-    "note": "F2",
-    "color": "white"
+    "note": "f2",
+    "color": "white",
+    "offset": 120
   },
   54: {
-    "note": "F#2",
-    "color": "black"
+    "note": "fs2",
+    "color": "black",
+    "offset": 144
   },
   55: {
-    "note": "G2",
-    "color": "white"
+    "note": "g2",
+    "color": "white",
+    "offset": 160
   },
   56: {
-    "note": "G#2",
-    "color": "black"
+    "note": "gs2",
+    "color": "black",
+    "offset": 188
   },
   57: {
-    "note": "A2",
-    "color": "white"
+    "note": "a2",
+    "color": "white",
+    "offset": 200
   },
   58: {
-    "note": "A#2",
-    "color": "black"
+    "note": "as2",
+    "color": "black",
+    "offset": 232
   },
   59: {
-    "note": "B2",
-    "color": "white"
+    "note": "b2",
+    "color": "white",
+    "offset": 240
   },
   60: {
-    "note": "C3",
-    "color": "white"
+    "note": "c3",
+    "color": "white",
+    "offset": 280
   },
   61: {
-    "note": "C#3",
-    "color": "black"
+    "note": "cs3",
+    "color": "black",
+    "offset": 302
   },
   62: {
-    "note": "D3",
-    "color": "white"
+    "note": "d3",
+    "color": "white",
+    "offset": 320
   },
   63: {
-    "note": "D#3",
-    "color": "black"
+    "note": "ds3",
+    "color": "black",
+    "offset": 351
   },
   64: {
-    "note": "E3",
-    "color": "white"
+    "note": "e3",
+    "color": "white",
+    "offset": 360
   },
   65: {
-    "note": "F3",
-    "color": "white"
+    "note": "f3",
+    "color": "white",
+    "offset": 400
   },
   66: {
-    "note": "F#3",
-    "color": "black"
+    "note": "fs3",
+    "color": "black",
+    "offset": 420
   },
   67: {
-    "note": "G3",
-    "color": "white"
+    "note": "g3",
+    "color": "white",
+    "offset": 440
   },
   68: {
-    "note": "G#3",
-    "color": "black"
+    "note": "gs3",
+    "color": "black",
+    "offset": 464
   },
   69: {
-    "note": "A3",
-    "color": "white"
+    "note": "a3",
+    "color": "white",
+    "offset": 480
   },
   70: {
-    "note": "A#3",
-    "color": "black"
+    "note": "as3",
+    "color": "black",
+    "offset": 509
   },
   71: {
-    "note": "B3",
-    "color": "white"
+    "note": "b3",
+    "color": "white",
+    "offset": 520
   },
   72: {
-    "note": "C4",
-    "color": "white"
+    "note": "c4",
+    "color": "white",
+    "offset": 560
   }
 };

@@ -34,35 +34,32 @@
 }
 
 .key-container {
-  display: flex;
+  /* display: flex; */
   position: absolute;
   background: black;
   padding: 0 1px;
   width: 600px;
   height: 170px;
-  border-left: 3px solid #040505;
   border-top: 3px solid #040505;
-  border-right: 3px solid #040505;
   right: 30px;
   bottom: 12px;
   box-shadow: 
   0px -8px 4px -2px #040505;
 }
 
-.pressedKey {
-  width: 40px;
-  height: 170px;
-  position: absolute;
-  background-color: white;
-  border: 1px solid gray;
-}
-
 .white-key {
-  width: 40px;
+  position: absolute;
+  width: 38px;
   height: 165px;
   background-color: white;
-  margin: 0 1px;
-  box-shadow: -2px -6px 4px 2px #d3d3d3 inset;
+  box-shadow: -1px -4px 4px 2px #d3d3d3 inset;
+}
+
+.white-pressed {
+  position: absolute;
+  width: 38px;
+  height: 168px;
+  box-shadow: -12px -12px 10px -2px #c0c0c0 inset;
 }
 
 .black-key {
@@ -70,44 +67,18 @@
   width: 20px;
   height: 100px;
   background-color: black;
+  background-image: linear-gradient(
+    #000 5% 80%,
+    #333 85%
+  );
+  border: 2px solid black;
+  border-right: 3px solid #444;
+  z-index: 100;
 }
 
-.cs2 {
-  left: 30px;
-}
-
-.ds2 {
-  left: 70px;
-}
-
-.fs2 {
-  left: 150px;
-}
-
-.gs2 {
-  left: 190px;
-}
-
-.as2 {
-  left: 230px;
-}
-
-.cs3 {
-  left: 310px;
-}
-
-.ds3 {
-  left: 350px;
-}
-
-.fs3 {
-  left: 430px;
-}
-
-.gs3 {
-  left: 470px;
-}
-
-.as3 {
-  left: 510px;
+.black-pressed {
+  position: absolute;
+  width: 20px;
+  height: 103px;
+  box-shadow: -6px -2px 10px -6px #c0c0c0 inset;
 }

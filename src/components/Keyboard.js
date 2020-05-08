@@ -3,51 +3,41 @@ import MidiDataContext from '../context/MidiDataContext';
 import '../styles/keyboard.css';
 import { keyMap } from '../keyMap';
 
+let regularKeys = [];
+
+for (let key in keyMap) {
+  const keyStyle = { left: keyMap[key].offset };
+  if (keyMap[key].color === "white") {
+    regularKeys.push(<div style={keyStyle} className="white-key" key={key}></div>);
+  } else {
+    regularKeys.push(<div style={keyStyle} className="black-key" key={key}></div>);
+  }
+}
+
 const Keyboard = () => {
   const { keyData } = useContext(MidiDataContext);
 
   const pressedKeys = keyData.map((key, i) => {
-    if (key.note && keyMap[key.note].color === "white") {
-      const keyLocation = {
-        left: ((key.note - 48) * 40),
+    let keyToRender = null;
+
+    if(key.note) {
+      const keyStyle = {
+        left: keyMap[key.note].offset,
       };
-      return (
-        <div style={keyLocation} className="pressedKey" key={i}></div>
-      );
-    } else {
-      return null;
+      if (keyMap[key.note].color === "white") {
+        keyToRender = <div style={keyStyle} className="white-key white-pressed" key={i}></div>;
+      } else {
+        keyToRender = <div style={keyStyle} className="black-key black-pressed" key={i}></div>;
+      }
     }
+    return keyToRender;
   });
 
   return (
     <div className="keyboard-outer">
       <div className="keyboard-inner">
         <div className="key-container">
-          <div className="white-key"></div>
-          <div className="white-key"></div>
-          <div className="white-key"></div>
-          <div className="white-key"></div>
-          <div className="white-key"></div>
-          <div className="white-key"></div>
-          <div className="white-key"></div>
-          <div className="white-key"></div>
-          <div className="white-key"></div>
-          <div className="white-key"></div>
-          <div className="white-key"></div>
-          <div className="white-key"></div>
-          <div className="white-key"></div>
-          <div className="white-key"></div>
-          <div className="white-key"></div>
-          <div className="black-key cs2"></div>
-          <div className="black-key ds2"></div>
-          <div className="black-key fs2"></div>
-          <div className="black-key gs2"></div>
-          <div className="black-key as2"></div>
-          <div className="black-key cs3"></div>
-          <div className="black-key ds3"></div>
-          <div className="black-key fs3"></div>
-          <div className="black-key gs3"></div>
-          <div className="black-key as3"></div>
+          {regularKeys}
           {pressedKeys}
         </div>
       </div>
