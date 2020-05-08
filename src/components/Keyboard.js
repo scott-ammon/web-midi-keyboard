@@ -39,6 +39,10 @@ const Keyboard = () => {
         <div className="controls line"></div>
         <div className="controls top"></div>
         <div className="controls left"></div>
+        <div className="button b1"></div>
+        <div className="button b2"></div>
+        <div className="button b3"></div>
+        <div className="button b4"></div>
         <div className="key-container">
           {regularKeys}
           {pressedKeys}
