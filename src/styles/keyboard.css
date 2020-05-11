@@ -48,8 +48,8 @@
 
 .left {
   width: 110px;
-  height: 150px;
-  top: 100px;
+  height: 158px;
+  top: 95px;
   left: 30px;
 }
 
@@ -65,8 +65,9 @@
 
 .dial {
   position: absolute;
+  top: 105px;
   width: 10px;
-  height: 110px;
+  height: 137px;
   background: black;
   border-radius: 4px;
   background-image: linear-gradient(
@@ -79,18 +80,15 @@
 
 .pitch {
   left: 58px;
-  top: 120px;
 }
 
 .modulation {
   left: 103px;
-  top: 120px;
 }
 
 .handle-mod {
   position: absolute;
   right: -13px;
-  bottom: 0;
   width: 35px;
   height: 10px;
   border-radius: 3px;
@@ -101,7 +99,6 @@
 .handle-pitch {
   position: absolute;
   right: -13px;
-  bottom: 50px;
   width: 35px;
   height: 10px;
   border-radius: 3px;

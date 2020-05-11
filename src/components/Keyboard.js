@@ -15,7 +15,10 @@ for (let key in keyMap) {
 }
 
 const Keyboard = () => {
-  const { keyData } = useContext(MidiDataContext);
+  const { keyData, pitch, modulation } = useContext(MidiDataContext);
+  
+  const pitchStyle = { bottom: pitch };
+  const modStyle = { bottom: modulation };
 
   const pressedKeys = keyData.map((key, i) => {
     let keyToRender = null;
@@ -44,10 +47,10 @@ const Keyboard = () => {
         <div className="button b4"></div>
         <div className="controls left"></div>
         <div className="dial modulation">
-          <div className="handle-mod"></div>
+          <div style={modStyle} className="handle-mod"></div>
         </div>
         <div className="dial pitch">
-          <div className="handle-pitch"></div>
+          <div style={pitchStyle} className="handle-pitch"></div>
         </div>
         <div className="key-container">
           {regularKeys}

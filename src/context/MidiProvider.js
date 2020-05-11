@@ -4,10 +4,7 @@ import { setUpMIDIAccess } from '../midi-utils/midi-utils';
 import * as Constants from '../constants';
 
 const MidiProvider = (props) => {
-  const [keyData, setKeyData] = useState([{
-    note: null,
-    velocity: null
-  }]);
+  const [keyData, setKeyData] = useState([{ note: null, velocity: null }]);
   const [errors, setErrors] = useState(null);
   const [pitch, setPitch] = useState(0);
   const [modulation, setModulation] = useState(0);

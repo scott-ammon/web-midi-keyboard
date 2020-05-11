@@ -2,7 +2,7 @@ import React from 'react';
 
 const MidiDataContext = React.createContext({
   keyData: [],
-  pitch: 0,
+  pitch: 64,
   modulation: 0,
   errors: null
 });
