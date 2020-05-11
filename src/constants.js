@@ -14,5 +14,6 @@ export const CONNECTED = "connected";
 
 // MIDI Errors
 export const NO_DEVICE_ERROR = "Error: No device found.";
+export const NO_DEVICE_ON_STARTUP_ERROR = "Error: No device found. Please connect a device and refresh your browser.";
 export const CONNECTION_ERROR = "Error: Could not establish access to Web MIDI Api.";
 export const UNSUPPORTED_BROWSER_ERROR = "Web MIDI Api is not supported in this browser.";

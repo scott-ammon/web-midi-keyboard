@@ -8,8 +8,10 @@ const MidiProvider = (props) => {
   const [errors, setErrors] = useState(null);
   const [pitch, setPitch] = useState(64);
   const [modulation, setModulation] = useState(0);
+  const [ deviceName, setDeviceName ] = useState(null);
 
   const midiData = {
+    deviceName,
     keyData,
     pitch,
     modulation,
@@ -49,8 +51,10 @@ const MidiProvider = (props) => {
   const onStateChange = (input) => {
     setKeyData([]);
     if(input.currentTarget.state === Constants.DISCONNECTED) {
+      setDeviceName(null);
       setErrors(Constants.NO_DEVICE_ERROR);
     } else if (input.currentTarget.state === Constants.CONNECTED) {
+      setDeviceName(input.currentTarget.name);
       setErrors(null);
     }
   }

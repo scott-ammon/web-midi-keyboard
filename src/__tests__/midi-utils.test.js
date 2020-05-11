@@ -19,7 +19,7 @@ test('When MIDIAccess succeeds with no device connected, error field populated',
 
   const midiInput = await setUpMIDIAccess();
 
-  expect(midiInput.errors).toEqual(Constants.NO_DEVICE_ERROR);
+  expect(midiInput.errors).toEqual(Constants.NO_DEVICE_ON_STARTUP_ERROR);
 });
 
 test('When launched in unsupported browser, setUpMIDIAccess alerts failure', async () => {

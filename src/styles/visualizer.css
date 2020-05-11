@@ -5,7 +5,7 @@
 
 .flex {
   display: flex;
-  width: 500px;
+  width: 600px;
 }
 
 h4 {
@@ -14,6 +14,11 @@ h4 {
   text-align: right;
 }
 
-.flex p {
+.errors {
+  width: 300px;
+  color: red;
+}
+
+.data {
   width: 30px;
 }
