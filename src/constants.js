@@ -1,9 +1,11 @@
 // MIDI object constants
-export const EVENT_CHANNEL = 0;
+export const EVENT_INDEX = 0;
+export const LEAST_SIGNIFICANT_BYTE_INDEX = 1;
+export const MOST_SIGNIFICANT_BYTE_INDEX = 2;
 export const NOTE_ON_EVENT = 144;
 export const NOTE_OFF_EVENT = 128;
-export const NOTE_CHANNEL = 1;
-export const VELOCITY_CHANNEL = 2;
+export const PITCH_BEND_EVENT = 224;
+export const MODULATION_EVENT = 176;
 export const MIDI_INPUT = "input-0";
 
 // MIDI states
