@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import MidiDataContext from '../context/MidiDataContext';
+import { MidiDataContext } from 'web-midi-hooks';
 import '../styles/keyboard.css';
 import { keyMap } from '../keyMap';
 
